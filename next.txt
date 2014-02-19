@@ -1,0 +1,58 @@
+Blocks need to be simpler.  Actually they need to be tiles.
+  Block class has a rect, x, y and image (or images for animation).  The
+  image should be part of the class itself so that it can be 
+  pickled.
+
+  There should be a render class that creates the surfaces used to display
+  the images whne things are loaded.  
+
+
+Levels should be simpler
+  Levels should be a list of lists so that order counts and it's possible
+  to make sure and swap out individual tiles easily.
+
+  Levels should have an object, stored and created by the leve editor as
+  described above, that consitutes the collision mask.
+
+  Levels should also have a background image that is loaded into the default
+  display surface.
+
+  There should be an altogithm that defines if a block is adjacent to another
+  block for the level editor.  That algorithm should be used to define the
+  collision boundaries for the level so that we don't need to calculate over
+  all the blocks.
+
+  Levels should be stored pickled.  There should be a load class.  There 
+  should not be a dump class. That should be implemented in the level editor.
+
+  Different objective types should be supported as well.  
+    1.  Defeat all enemies.
+    2.  Defeat some enemies or just one (i.e. boss)
+    3.  Get to a position on the map
+    4.  Get to a position on the map in a certain order.
+    5.  Pick certain items up
+
+Player's should be easier to manage and edit.
+  Player should be in it's own lib file.
+
+  Player's collision detection should be simplified but I'm not sure how yet.
+
+  Sound events should be built into the player class.
+
+Enemy's should be implemented like this....
+  Sprites
+  
+  Similiar to player class for attributes.
+
+  Implement AI as a queue of commands or????  Separate behavior from the
+  data for the player.
+
+  Sound events should be built into the class.  Based on events???
+
+Story flow
+  This is really the important part.  An editor is needed for this also.  
+  
+  Integrate the level editor code into this editor.
+
+  Should allow for text and images to tell the story.
+
